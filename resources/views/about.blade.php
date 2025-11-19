@@ -100,44 +100,26 @@
     
     <div class="about-content">
         <div class="profile-image">
-            <img src="https://via.placeholder.com/250" alt="Profile Picture">
+            <img src="{{ $profile_image }}" alt="Profile Picture">
         </div>
         
         <div class="bio">
-            <h2>Halo! Saya John Doe</h2>
-            <p>Saya adalah seorang Full Stack Web Developer dengan pengalaman 5+ tahun dalam mengembangkan aplikasi web yang scalable dan user-friendly.</p>
-            <p>Saya passionate dalam menciptakan solusi digital yang tidak hanya fungsional, tetapi juga memberikan pengalaman pengguna yang luar biasa.</p>
-            <p>Dengan keahlian di berbagai teknologi modern, saya siap membantu mewujudkan ide Anda menjadi kenyataan digital.</p>
+            <h2>Halo! Saya {{ $name }}</h2>
+            @foreach($bio as $paragraph)
+            <p>{{ $paragraph }}</p>
+            @endforeach
         </div>
     </div>
     
     <div class="skills">
         <h2>Keahlian Saya</h2>
         <div class="skills-grid">
+            @foreach($skills as $skill)
             <div class="skill-item">
-                <h3>Laravel</h3>
-                <p>PHP Framework</p>
+                <h3>{{ $skill['name'] }}</h3>
+                <p>{{ $skill['category'] }}</p>
             </div>
-            <div class="skill-item">
-                <h3>Vue.js</h3>
-                <p>JavaScript Framework</p>
-            </div>
-            <div class="skill-item">
-                <h3>MySQL</h3>
-                <p>Database</p>
-            </div>
-            <div class="skill-item">
-                <h3>HTML/CSS</h3>
-                <p>Frontend</p>
-            </div>
-            <div class="skill-item">
-                <h3>Git</h3>
-                <p>Version Control</p>
-            </div>
-            <div class="skill-item">
-                <h3>REST API</h3>
-                <p>Backend</p>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

@@ -1,15 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PortofolioController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
-
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-
-Route::get('/portfolio', function () {
-    return view('portfolio');
-})->name('portfolio');
+Route::get('/', [PortofolioController::class, 'index'])->name('home');
+Route::get('/about', [PortofolioController::class, 'about'])->name('about');
+Route::get('/portfolio', [PortofolioController::class, 'portfolio'])->name('portfolio');

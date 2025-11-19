@@ -96,88 +96,20 @@
 </div>
 
 <div class="portfolio-grid">
+    @foreach($projects as $project)
     <div class="project-card">
-        <div class="project-image">🛒</div>
+        <div class="project-image">{{ $project['icon'] }}</div>
         <div class="project-content">
-            <h3>E-Commerce Platform</h3>
-            <p>Platform e-commerce lengkap dengan sistem pembayaran, manajemen produk, dan dashboard admin.</p>
+            <h3>{{ $project['title'] }}</h3>
+            <p>{{ $project['description'] }}</p>
             <div class="project-tags">
-                <span class="tag">Laravel</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">Vue.js</span>
+                @foreach($project['tags'] as $tag)
+                <span class="tag">{{ $tag }}</span>
+                @endforeach
             </div>
-            <a href="#" class="project-link">Lihat Detail</a>
+            <a href="{{ $project['link'] }}" class="project-link">Lihat Detail</a>
         </div>
     </div>
-    
-    <div class="project-card">
-        <div class="project-image">📱</div>
-        <div class="project-content">
-            <h3>Social Media App</h3>
-            <p>Aplikasi media sosial dengan fitur real-time chat, posting, dan notifikasi.</p>
-            <div class="project-tags">
-                <span class="tag">Laravel</span>
-                <span class="tag">WebSocket</span>
-                <span class="tag">Redis</span>
-            </div>
-            <a href="#" class="project-link">Lihat Detail</a>
-        </div>
-    </div>
-    
-    <div class="project-card">
-        <div class="project-image">📊</div>
-        <div class="project-content">
-            <h3>Dashboard Analytics</h3>
-            <p>Dashboard untuk monitoring dan analisis data bisnis dengan visualisasi interaktif.</p>
-            <div class="project-tags">
-                <span class="tag">Laravel</span>
-                <span class="tag">Chart.js</span>
-                <span class="tag">API</span>
-            </div>
-            <a href="#" class="project-link">Lihat Detail</a>
-        </div>
-    </div>
-    
-    <div class="project-card">
-        <div class="project-image">🎓</div>
-        <div class="project-content">
-            <h3>Learning Management System</h3>
-            <p>Platform pembelajaran online dengan fitur kursus, quiz, dan sertifikat.</p>
-            <div class="project-tags">
-                <span class="tag">Laravel</span>
-                <span class="tag">Tailwind</span>
-                <span class="tag">MySQL</span>
-            </div>
-            <a href="#" class="project-link">Lihat Detail</a>
-        </div>
-    </div>
-    
-    <div class="project-card">
-        <div class="project-image">🏨</div>
-        <div class="project-content">
-            <h3>Hotel Booking System</h3>
-            <p>Sistem reservasi hotel dengan integrasi pembayaran dan manajemen booking.</p>
-            <div class="project-tags">
-                <span class="tag">Laravel</span>
-                <span class="tag">Payment Gateway</span>
-                <span class="tag">Bootstrap</span>
-            </div>
-            <a href="#" class="project-link">Lihat Detail</a>
-        </div>
-    </div>
-    
-    <div class="project-card">
-        <div class="project-image">📝</div>
-        <div class="project-content">
-            <h3>Content Management System</h3>
-            <p>CMS custom untuk manajemen konten website dengan editor WYSIWYG.</p>
-            <div class="project-tags">
-                <span class="tag">Laravel</span>
-                <span class="tag">TinyMCE</span>
-                <span class="tag">SEO</span>
-            </div>
-            <a href="#" class="project-link">Lihat Detail</a>
-        </div>
-    </div>
+    @endforeach
 </div>
 @endsection

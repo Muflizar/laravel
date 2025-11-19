@@ -68,26 +68,18 @@
 </style>
 
 <div class="hero">
-    <h1>Selamat Datang di Portofolio Saya</h1>
-    <p>Saya adalah seorang Web Developer yang passionate dalam menciptakan solusi digital</p>
+    <h1>{{ $title }}</h1>
+    <p>{{ $subtitle }}</p>
     <a href="{{ route('portfolio') }}" class="cta-button">Lihat Karya Saya</a>
 </div>
 
 <div class="features">
+    @foreach($features as $feature)
     <div class="feature-card">
-        <div class="feature-icon">💻</div>
-        <h3>Web Development</h3>
-        <p>Membangun website modern dan responsif dengan teknologi terkini</p>
+        <div class="feature-icon">{{ $feature['icon'] }}</div>
+        <h3>{{ $feature['title'] }}</h3>
+        <p>{{ $feature['description'] }}</p>
     </div>
-    <div class="feature-card">
-        <div class="feature-icon">🎨</div>
-        <h3>UI/UX Design</h3>
-        <p>Mendesain antarmuka yang menarik dan user-friendly</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon">📱</div>
-        <h3>Responsive Design</h3>
-        <p>Website yang tampil sempurna di semua perangkat</p>
-    </div>
+    @endforeach
 </div>
 @endsection
